@@ -1,0 +1,9 @@
+/* Header.css */
+#header {
+    background-image: url('../images/header.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px; 
+    color: white; 
+  }
+  
