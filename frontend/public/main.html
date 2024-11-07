@@ -14,10 +14,7 @@
     <div style="left: 133px; top: 249.20px; position: absolute; color: white; font-size: 36px; font-family: Roboto; font-weight: 700; word-wrap: break-word">딥러닝 기반 알약 인식 및 정보제공 서비스</div>
     <div style="left: 32px; top: 216.20px; position: absolute">
         <div style="width: 24px; height: 24px; left: 0px; top: 0px; position: absolute; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-            <div style="width: 19.50px; height: 21.03px; border: 1px white solid"></div>
         </div>
-        <img style="width: 21px; height: 21px; left: 1.50px; top: 49.50px; position: absolute" src="https://via.placeholder.com/21x21" />
-        <img style="width: 15px; height: 22px; left: 4.50px; top: 97.50px; position: absolute" src="https://via.placeholder.com/15x22" />
     </div>
     <img style="width: 276px; height: 76px; left: 133px; top: 132.20px; position: absolute" src="images/알려드림 로고.png" />
     <div style="width: 384px; height: 448px; left: 939px; top: 176.20px; position: absolute">
@@ -25,26 +22,28 @@
         <button style="width: 136px; height: 38px; padding-left: 26px; padding-right: 26px; padding-top: 5px; padding-bottom: 5px; left: 105px; top: 370px; position: absolute; background: #DDDDDD; border-radius: 20px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
             <div style="text-align: center; font-size: 20px; font-family: Roboto; font-weight: 400; word-wrap: break-word" onClick="location.href='result.html'">검색</div>
         </button>
+        <form action="/api/savePillData" method="POST" enctype="multipart/form-data"></form>
         <div style="left: 37px; top: 25px; position: absolute; color: black; font-size: 24px; font-family: Roboto; font-weight: 700; word-wrap: break-word">알약 검색</div>
-        <div style="left: 37px; top: 93px; position: absolute; color: black; font-size: 18px; font-family: Roboto; font-weight: 700; word-wrap: break-word">알약의 제형을 선택해주세요
-          <select class="list1">
-            <option value="1">제형 선택</option>
-            <option value="2">연질캡슐</option>
-            <option value="3">정제류</option>
-            <option value="4">경질캡슐</option>
-            <option value="5">기타</option>
+        <div style="left: 37px; top: 93px; position: absolute; color: black; font-size: 18px; font-family: Roboto; font-weight: 700; word-wrap: break-word">  <label for="form">알약의 제형을 선택해주세요</label>
+          <select class=list1 name="form" id="form">
+            <option value="제형선택">제형 선택</option>
+            <option value="연질캡슐">연질캡슐</option>
+            <option value="정제류">정제류</option>
+            <option value="경질캡슐">경질캡슐</option>
+            <option value="기타">기타</option>
+          </select>
+        
+        </div>
+        <div style="left: 37px; top: 187px; position: absolute; color: black; font-size: 18px; font-family: Roboto; font-weight: 700; word-wrap: break-word"><label for="shape">알약의 모양을 선택해주세요</label>
+          <select class="list2" name="shape" id="shape">
+            <option value="모형 선택">모형 선택</option>
+            <option value="원형">원형</option>
+            <option value="반원형">반원형</option>
+            <option value="삼각형">삼각형</option>
+            <option value="다각형">다각형</option>
           </select>
         </div>
-        <div style="left: 37px; top: 187px; position: absolute; color: black; font-size: 18px; font-family: Roboto; font-weight: 700; word-wrap: break-word">알약의 모양을 선택해주세요
-          <select class="list2">
-            <option value="1">모형 선택</option>
-            <option value="2">원형</option>
-            <option value="3">반원형</option>
-            <option value="4">삼각형</option>
-            <option value="5">다각형</option>
-          </select>
-        </div>
-        <div style="left: 37px; top: 279px; position: absolute; color: black; font-size: 18px; font-family: Roboto; font-weight: 700; word-wrap: break-word">알약 사진을 첨부해주세요
+        <div style="left: 37px; top: 279px; position: absolute; color: black; font-size: 18px; font-family: Roboto; font-weight: 700; word-wrap: break-word"><label for="pillImage">알약 사진을 첨부해주세요</label>
           <input type="file" class="real-upload" accept="image/*" required multiple>
           <script>
             function getImageFiles(e) {
